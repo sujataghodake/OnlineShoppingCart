@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/Software/apache-tomcat-7.0.85/lib/mysql-connector-java-5.1.45-bin.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/tomcat"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre7"/>
+	<classpathentry kind="lib" path="D:/Project_Workspace/javassist-3.9.0.GA.jar"/>
+	<classpathentry kind="lib" path="D:/Project_Workspace/mail.jar"/>
+	<classpathentry kind="lib" path="D:/Software/servlet-api.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

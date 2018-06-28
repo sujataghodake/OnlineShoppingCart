@@ -228,7 +228,7 @@ private void searchedorderstatus(HttpServletRequest request,
 private void checkout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 ArrayList<Product> list = (ArrayList<Product>)request.getAttribute("list");
-ArrayList<User> user1=null;
+User user1=new User();
 //User user=new User();
 int userid=0;
 HttpSession session = request.getSession();
@@ -238,11 +238,11 @@ HttpSession session = request.getSession();
 		{
 			list = (ArrayList<Product>)request.getSession().getAttribute("list");
 			//Object userid=(Object)session.getAttribute("userid");
-			user1=(ArrayList<User>) session.getAttribute("user");
-			for(int i=0;i<user1.size();i++){
-				userid=user1.get(i).getUserid();
+			user1=(User) session.getAttribute("user");
+			//for(int i=0;i<user1.size();i++){
+				userid=user1.getUserid();
 				System.out.println("coming here");
-			}
+			//}
 			//String username=(String)session.getAttribute("Customer");
 			//System.out.println("11=="+username);
 			System.out.println("22=="+userid);
@@ -498,10 +498,10 @@ private void login(HttpServletRequest request, HttpServletResponse response)
 		 if(userValidate.equals("Admin_Role"))
 	 { 
 		 forwardTo = "AdminHome.jsp";
-		 ArrayList<User> list=userdata.getUserId(username);
+		 User user1=userdata.getUserId(username);
 		 System.out.println("Admin's Home");
 		 session.setAttribute("Admin", username);
-		 session.setAttribute("admin", list);
+		 session.setAttribute("admin", user1);
 	 }
 	 else if(userValidate.equals("Guest_Role"))
 	 {
@@ -516,10 +516,10 @@ private void login(HttpServletRequest request, HttpServletResponse response)
 		 //HttpSession sess
 		 System.out.println("Customer's Home");
 		 
-		 ArrayList<User> list=userdata.getUserId(username);
+		 User user2=userdata.getUserId(username);
 		 forwardTo = "CustomerHome.jsp";
 		 session.setAttribute("Customer", username);
-		 session.setAttribute("user", list);
+		 session.setAttribute("user", user2);
 	 
 	 }
 	 else if(userValidate.equals("Customer_Reject"))

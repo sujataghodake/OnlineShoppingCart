@@ -19,12 +19,9 @@ if(session.getAttribute("Customer")==null)
 	{ response.sendRedirect("UserLogin.jsp");
 } 
 else{
-	ArrayList<User> list1=(ArrayList<User>)session.getAttribute("user");
-	int id=0;
-	for(int i=0;i<list1.size();i++)
-	{
-		id=list1.get(i).getUserid();
-	}
+	User user=new User();
+	user=(User)session.getAttribute("user");
+		int id=user.getUserid();
 	System.out.println(userid);
            ProductDataImpl productdata = new ProductDataImpl();
 			ArrayList<Order> list = productdata.getOrderData(id);
@@ -37,9 +34,7 @@ else{
 			session.setAttribute("list", list);
 			System.out.println(list.size());
 	%>
-	<P>
-		<b>Products for sale:</b>
-	</P>
+
 	<form>
 	<table width="100%" border="1">
 		<th>Order Id</th>
@@ -50,8 +45,7 @@ else{
 	
 		<c:forEach items="${list}" var="order">
 			<tr>
-			<td> <%-- <a href="OrderItem.jsp"> ${order.idordermaster}</a>
-			<input type="hidden" name="idordermaster" value="${order.idordermaster}"> --%> 
+			<td> 
 			<a name="action" href="OrderItem?id=<c:out value='${order.idordermaster}'/>">${order.idordermaster}</a>
 			 
 				</td>

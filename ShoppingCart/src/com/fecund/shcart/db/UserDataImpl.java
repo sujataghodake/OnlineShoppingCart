@@ -317,10 +317,10 @@ public class UserDataImpl implements UserData_IF {
 		return 1;
 	}
 
-	public ArrayList <User> getUserId(String username) {
-		ArrayList<User> list = new ArrayList<User>();
+	public User getUserId(String username) {
+		//ArrayList<User> list = new ArrayList<User>();
 		Connection con = null;
-		User user=null;
+		User user=new User();
 		try {
 			con = (Connection) ConnectionManager.getConnection();
 			String query = "SELECT * FROM user where username =?";
@@ -338,14 +338,14 @@ public class UserDataImpl implements UserData_IF {
 				user.setPassword(rs.getString("password"));
 				user.setConfirmpassword(rs.getString("confirmpassword"));
 				user.setStatus(rs.getString("status"));
-				list.add(user);
+				
 
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return list;
+		return user;
 	}
 
 	
