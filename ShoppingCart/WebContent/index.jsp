@@ -21,7 +21,7 @@ if(session.getAttribute("Customer")!=null)
 %>
 	<h1>Shopping Bazar- An On-line Shopping Portal</h1>
 	<h3>
-		<marquee>Welcome to Online-Shopping </marquee>
+		<marquee>Welcome To Online-Shopping </marquee>
 	</h3>
 	
 	<a href="Register.jsp">Register</a>
