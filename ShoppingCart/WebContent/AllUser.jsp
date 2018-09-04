@@ -11,7 +11,7 @@
 <title>Insert title here</title>
 
 </head>
-<body bgcolor="#E6E5F4">
+<body bgcolor="#E6E5F5">
 <%
 if(session.getAttribute("Admin")==null)
 	{ response.sendRedirect("UserLogin.jsp");
